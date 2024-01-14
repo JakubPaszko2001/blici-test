@@ -19,7 +19,7 @@ const Experience = ({ setLoadingProgress }) => {
     };
 
     // Change color every 8 seconds
-    const intervalId = setInterval(changeColor, 8000);
+    const intervalId = setInterval(changeColor, 6400);
 
     // Clean up the interval
     return () => clearInterval(intervalId);
@@ -50,9 +50,15 @@ const Experience = ({ setLoadingProgress }) => {
 
   const modelRef = useRef();
 
+  // useFrame((state, delta) => {
+  //   // Rotate the model in the render loop
+  //   modelRef.current.rotation.y += 0.005; // You can adjust the rotation speed
+  // });
+
   useFrame((state, delta) => {
-    // Rotate the model in the render loop
-    modelRef.current.rotation.y += 0.005; // You can adjust the rotation speed
+    // Calculate rotation per frame for one full rotation in 8 seconds
+    const rotationPerFrame = Math.PI / (8 * 60); // 2π radians divided by total frames in 8 seconds
+    modelRef.current.rotation.y += rotationPerFrame;
   });
 
   return (
