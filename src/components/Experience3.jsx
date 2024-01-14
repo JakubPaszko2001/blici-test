@@ -19,7 +19,7 @@ const Experience = ({ setLoadingProgress }) => {
     };
 
     // Change color every 8 seconds
-    const intervalId = setInterval(changeColor, 6400);
+    const intervalId = setInterval(changeColor, 7500);
 
     // Clean up the interval
     return () => clearInterval(intervalId);
