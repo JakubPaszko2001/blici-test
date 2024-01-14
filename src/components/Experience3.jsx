@@ -56,9 +56,14 @@ const Experience = ({ setLoadingProgress }) => {
   // });
 
   useFrame((state, delta) => {
-    // Calculate rotation per frame for one full rotation in 8 seconds
-    const rotationPerFrame = Math.PI / (8 * 60); // 2π radians divided by total frames in 8 seconds
-    modelRef.current.rotation.y += rotationPerFrame;
+    // Calculate rotation based on time
+    // 8 seconds for a full rotation (2 * Math.PI radians)
+    const rotationPerSecond = (2 * Math.PI) / 8;
+
+    // Rotate the model based on elapsed time
+    if (modelRef.current) {
+      modelRef.current.rotation.y += rotationPerSecond * delta;
+    }
   });
 
   return (
