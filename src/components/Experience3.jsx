@@ -19,7 +19,7 @@ const Experience = ({ setLoadingProgress }) => {
     };
 
     // Change color every 8 seconds
-    const intervalId = setInterval(changeColor, 7500);
+    const intervalId = setInterval(changeColor, 8000);
 
     // Clean up the interval
     return () => clearInterval(intervalId);
@@ -49,11 +49,6 @@ const Experience = ({ setLoadingProgress }) => {
   // useHelper(directionalLight4Ref, DirectionalLightHelper, 1, "blue");
 
   const modelRef = useRef();
-
-  // useFrame((state, delta) => {
-  //   // Rotate the model in the render loop
-  //   modelRef.current.rotation.y += 0.005; // You can adjust the rotation speed
-  // });
 
   useFrame((state, delta) => {
     // Calculate rotation based on time
@@ -91,6 +86,7 @@ const Experience = ({ setLoadingProgress }) => {
           object={gltf.scene}
           scale={modelScale}
           position={[0, 0, 0]}
+          rotation={[0, -0.4, 0]}
         />
       </Suspense>
     </>
