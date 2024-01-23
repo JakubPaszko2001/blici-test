@@ -17,7 +17,7 @@ const Experience = () => {
   const gltf = useLoader(GLTFLoader, "./models/koszulka/untitled.gltf");
   const modelScale = [7, 7, 7];
 
-  console.log(gltf);
+  // console.log(gltf);
 
   return (
     <PresentationControls

@@ -29,7 +29,7 @@ const Experience = ({ setLoadingProgress }) => {
   const onProgress = (xhr) => {
     const percentLoaded = (xhr.loaded / (xhr.total || xhr.loaded)) * 100;
     setLoadingProgress(Math.floor(percentLoaded));
-    console.log(Math.floor(percentLoaded), "Exp");
+    // console.log(Math.floor(percentLoaded), "Exp");
   };
 
   const gltf = useLoader(

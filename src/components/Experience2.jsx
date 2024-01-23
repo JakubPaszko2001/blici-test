@@ -24,7 +24,7 @@ const Experience = () => {
   useHelper(directionalLight5Ref, DirectionalLightHelper, 1, "white");
   useHelper(directionalLight6Ref, DirectionalLightHelper, 1, "red");
 
-  console.log(gltf);
+  // console.log(gltf);
 
   return (
     <>

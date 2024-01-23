@@ -24,11 +24,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* {showLoader && (
+      {showLoader && (
         <div className="loader">
-          <p>Loading... {loadingProgress}%</p>
+          <p className="Loading">Loading... {loadingProgress}%</p>
         </div>
-      )} */}
+      )}
       <Canvas>
         {/* <OrbitControls /> */}
         <color attach="background" args={["#F3F0DF"]} />
